@@ -1,16 +1,47 @@
-# React + Vite
+# Застосунок для розшифровки VIN-кодів
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Веб-застосунок на React, який дозволяє користувачам розшифровувати VIN-коди автомобілів за допомогою публічного API агенції NHTSA, переглядати детальний опис характеристик, а також зберігати історію трьох останніх пошуків.
 
-Currently, two official plugins are available:
+**Посилання на розгорнутий проєкт:** [(https://vin-decoder-project.onrender.com)](https://vin-decoder-project.onrender.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Створений функціонал
 
-## React Compiler
+**Розшифровка VIN-коду:** Валідація та відправка запиту до NHTSA API для отримання повної інформації про автомобіль.
+**Таблиця результатів:** Відображення детальних параметрів, таких як марка, модель, рік випуску тощо, у вигляді таблиці.
+**Історія пошуку:** Збереження останніх 3 успішно розшифрованих VIN-кодів у LocalStorage. Користувач може клікнути на тег з історії для швидкого повторного пошуку.
+**База змінних (Variables):** Окрема сторінка зі списком усіх можливих автомобільних характеристик, які повертає API.
+**Сторінка деталей змінної:** Динамічний роутинг для перегляду повного опису конкретної характеристики за її ID.
+**Обробка помилок:** Валідація введення (довжина та заборонені символи) та інформативні сповіщення для користувача, якщо VIN-код не знайдено або виникла помилка мережі.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Інструкція з локального запуску
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Щоб запустити цей проєкт на своєму комп'ютері, необхідно виконати наступні кроки:
+
+### 1. Клонування репозиторію
+
+Зкопіюйте проєкт до себе на комп'ютер за допомогою Git:
+
+```bash
+git clone https://github.com/sofia-golovn/vin-decoder-project.git
+cd назва_репозиторію
+```
+
+### 2. Встановлення залежностей
+
+Переконайтеся, що у вас встановлений Node.js. У терміналі проєкту виконайте команду для завантаження всіх необхідних пакетів:
+
+```bash
+npm install
+```
+
+### 3. Запуск у режимі розробки
+
+Запустіть локальний сервер для перегляду вебдодатка:
+
+```bash
+npm run dev
+```
+
+Після цього відкрийте у браузері посилання, яке з'явиться в терміналі.
