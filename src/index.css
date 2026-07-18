@@ -1,0 +1,263 @@
+:root {
+  --brand: #1a365d;
+  --bg: #f3f4f6;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --border: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-header {
+  background-color: var(--card);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--muted);
+  margin-left: 1.5rem;
+  font-weight: 600;
+}
+
+.main-nav a:hover {
+  color: var(--brand);
+}
+
+.main-content {
+  flex: 1;
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.main-footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.vin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.vin-form input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.vin-form input:focus {
+  outline: none;
+  border-color: var(--brand);
+}
+
+.vin-form button {
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  background-color: var(--brand);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.vin-form button:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.alert {
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.alert.error {
+  background-color: #fff5f5;
+  color: #dc2626;
+  border-left: 4px solid #dc2626;
+}
+
+.alert.info {
+  background-color: var(--card);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  font-size: 0.8rem;
+}
+
+.history-section {
+  margin: 1.5rem 0;
+}
+
+.history-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.tag-btn {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.75rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.tag-btn:hover {
+  background-color: var(--brand);
+  color: #ffffff;
+  border-color: var(--brand);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+th,
+td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  background-color: #f8fafc;
+  font-weight: 700;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover td {
+  background-color: #f8fafc;
+}
+
+.variables-list {
+  list-style: none;
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.variable-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.variable-link:hover {
+  border-color: var(--brand);
+}
+
+.group-badge {
+  font-size: 0.75rem;
+  background-color: #f1f5f9;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  color: var(--muted);
+}
+
+.detail-card {
+  background-color: var(--card);
+  padding: 1.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--brand);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.meta-info {
+  margin: 0.5rem 0 1rem;
+  display: flex;
+  gap: 1.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (min-width: 640px) {
+  .vin-form {
+    flex-direction: row;
+  }
+
+  .vin-form input {
+    flex: 1;
+  }
+
+  .variables-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .variables-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
